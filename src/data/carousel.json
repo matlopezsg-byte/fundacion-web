@@ -1,0 +1,20 @@
+{
+  "imagenes": [
+    {
+      "src": "/images/carousel/slide01.jpeg",
+      "alt": "Voluntarios trabajando en la comunidad"
+    },
+    {
+      "src": "/images/carousel/slide01.jpeg",
+      "alt": "Taller de capacitación"
+    },
+    {
+      "src": "/images/carousel/slide01.jpeg",
+      "alt": "Evento solidario de la fundación"
+    },
+    {
+      "src": "/images/carousel/slide01.jpeg",
+      "alt": "Entrega de donaciones"
+    }
+  ]
+}

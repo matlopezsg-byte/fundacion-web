@@ -1,0 +1,21 @@
+{
+  "nombre": "Fundación Manos Unidas",
+  "descripcion": "Somos una fundación dedicada a transformar vidas a través de la educación, la solidaridad y el compromiso social. Trabajamos día a día para construir un futuro mejor para las comunidades más vulnerables.",
+  "mision": "Nuestra misión es brindar oportunidades de desarrollo integral a personas en situación de vulnerabilidad, promoviendo la educación, la salud y el bienestar comunitario.",
+  "vision": "Ser referentes en la transformación social, generando un impacto positivo y duradero en las comunidades donde trabajamos.",
+  "objetivos": [
+    "Promover la educación como herramienta de cambio social",
+    "Brindar apoyo integral a familias en situación de vulnerabilidad",
+    "Fomentar la participación comunitaria y el voluntariado",
+    "Desarrollar programas de capacitación y empleo",
+    "Garantizar el acceso a recursos básicos de salud y bienestar"
+  ],
+  "trabajo": "Desarrollamos programas educativos, talleres de capacitación laboral, asistencia alimentaria y acompañamiento a familias. Nuestro trabajo se sustenta en el compromiso de nuestros voluntarios y el apoyo de la comunidad.",
+  "contacto": {
+    "email": "contacto@fundacion.org",
+    "telefono": "+54 11 1234-5678",
+    "direccion": "Av. Ejemplo 1234, Ciudad, Argentina",
+    "instagram": "https://instagram.com/fundacion",
+    "facebook": "https://facebook.com/fundacion"
+  }
+}

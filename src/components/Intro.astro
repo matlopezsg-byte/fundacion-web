@@ -1,0 +1,104 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section id="quienes-somos" class="intro section">
+  <div class="intro-container">
+    <h2 class="intro-title">Redes que cuidan</h2>
+    
+    <div class="intro-content">
+      <p>{siteData.descripcion}</p>
+      
+      <p>Creemos firmemente que el cambio social nace del trabajo colectivo. Por eso, desde nuestros inicios nos dedicamos a tejer redes de contención y acompañamiento para quienes más lo necesitan. Cada acción que emprendemos está guiada por la convicción de que todas las personas merecen una vida digna, con acceso a educación, salud y oportunidades de desarrollo.</p>
+
+      <p>Sostenemos que la transformación real se construye desde la cercanía, la escucha y el compromiso diario con cada comunidad. Nuestros programas se diseñan junto a los vecinos y vecinas, porque entendemos que nadie conoce mejor sus necesidades que quienes las viven. Así, cada proyecto se convierte en una herramienta concreta de cambio.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    background: var(--color-bg-alt);
+    padding-bottom: 1.5rem;
+  }
+
+  .intro-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 2rem;
+    text-align: left;
+    position: relative;
+  }
+
+  .intro-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: 0.5rem 0 0;
+    border-radius: 2px;
+  }
+
+  .intro-content {
+    text-align: left;
+    width: 100%;
+  }
+
+  .intro-content p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-content h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .intro-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-content ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .intro-content ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .intro-container {
+      padding: 0 1.25rem;
+    }
+
+    .intro-title {
+      font-size: 1.8rem;
+    }
+
+    .intro-content p {
+      font-size: 1rem;
+    }
+  }
+</style>

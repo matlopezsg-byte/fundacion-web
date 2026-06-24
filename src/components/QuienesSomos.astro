@@ -1,0 +1,136 @@
+---
+import equipoData from '../data/equipo.json';
+---
+
+<section id="equipo" class="equipo section">
+  <div class="equipo-wrapper">
+    <h2 class="equipo-title">Nuestro Equipo</h2>
+
+    <div class="equipo-list">
+      {equipoData.integrantes.map((persona) => (
+        <div class="equipo-card">
+          <div class="equipo-card-img">
+            <img src={persona.imagen} alt={persona.nombre} />
+          </div>
+          <div class="equipo-card-info">
+            <h3>{persona.nombre}</h3>
+            <span class="equipo-card-rol">{persona.rol}</span>
+            <p>{persona.descripcion}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .equipo {
+    background: var(--color-bg);
+    padding-top: 1.5rem;
+  }
+
+  .equipo-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .equipo-title {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    text-align: left;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .equipo-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: 0.5rem 0 0;
+    border-radius: 2px;
+  }
+
+  .equipo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .equipo-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .equipo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .equipo-card-img {
+    width: 150px;
+    height: 135px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .equipo-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .equipo-card-info {
+    flex: 1;
+  }
+
+  .equipo-card-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-primary-dark);
+  }
+
+  .equipo-card-rol {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .equipo-card-info p {
+    color: var(--color-text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .equipo-wrapper {
+      padding: 0 1.25rem;
+    }
+
+    .equipo-title {
+      font-size: 1.6rem;
+    }
+
+    .equipo-card {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .equipo-card-img {
+      width: 70px;
+      height: 90px;
+    }
+  }
+</style>

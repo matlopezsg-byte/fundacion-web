@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+
+const noticias = (await getCollection('noticias')).sort(
+  (a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf()
+);
+---
+
+<section id="noticias" class="noticias section">
+  <div class="noticias-wrapper">
+    <h2 class="section-title">Noticias</h2>
+    
+    <div class="noticias-grid">
+      {noticias.map((noticia) => (
+        <article class="noticia-card">
+          <div class="noticia-card-img">
+            <img src={noticia.data.imagen} alt={noticia.data.titulo} loading="lazy" />
+          </div>
+          <div class="noticia-card-content">
+            <time class="noticia-fecha" datetime={noticia.data.fecha.toISOString()}>
+              {noticia.data.fecha.toLocaleDateString('es-AR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+            <h3 class="noticia-titulo">{noticia.data.titulo}</h3>
+            <p class="noticia-desc">{noticia.data.descripcion}</p>
+            {noticia.data.autor && (
+              <span class="noticia-autor">Por {noticia.data.autor}</span>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .noticias {
+    background: var(--color-bg-alt);
+  }
+
+  .noticias-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .noticia-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .noticia-card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .noticia-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .noticia-card:hover .noticia-card-img img {
+    transform: scale(1.05);
+  }
+
+  .noticia-card-content {
+    padding: 1.5rem;
+  }
+
+  .noticia-fecha {
+    font-size: 0.85rem;
+    color: var(--color-primary-light);
+    font-weight: 500;
+  }
+
+  .noticia-titulo {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.75rem;
+    color: var(--color-primary-dark);
+    line-height: 1.3;
+  }
+
+  .noticia-desc {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .noticia-autor {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .noticias-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

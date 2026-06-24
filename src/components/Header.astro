@@ -1,0 +1,212 @@
+---
+import siteData from '../data/site.json';
+---
+
+<header class="header">
+  <div class="header-container">
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
+    <a href="/" class="logo">
+      <span class="logo-text">{siteData.nombre}</span>
+    </a>
+
+    <nav class="nav" id="main-nav">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
+        <li><a href="#noticias" class="nav-link">Noticias</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #00796b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    height: var(--header-height);
+  }
+
+  .header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+  }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -7px;
+  }
+
+  .hamburger::after {
+    top: 7px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .header-container {
+      position: relative;
+      justify-content: center;
+    }
+
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--color-white);
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease;
+      padding-top: calc(var(--header-height) + 1rem);
+    }
+
+    .nav.active {
+      left: 0;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 1rem;
+      color: var(--color-text);
+      border-bottom: 1px solid #eee;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger::before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger::after {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#main-nav');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    nav?.classList.toggle('active');
+  });
+
+  // Cerrar menú al hacer click en un link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('active');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
