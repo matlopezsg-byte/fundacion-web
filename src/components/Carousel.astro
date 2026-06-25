@@ -8,9 +8,6 @@ import carouselData from '../data/carousel.json';
       {carouselData.imagenes.map((img, index) => (
         <div class={`carousel-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
           <img src={img.src} alt={img.alt} loading={index === 0 ? 'eager' : 'lazy'} />
-          <div class="carousel-overlay">
-            <p class="carousel-caption">{img.alt}</p>
-          </div>
         </div>
       ))}
     </div>
@@ -80,22 +77,6 @@ import carouselData from '../data/carousel.json';
     object-fit: cover;
   }
 
-  .carousel-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-    padding: 3rem 2rem 2rem;
-  }
-
-  .carousel-caption {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-align: center;
-  }
-
   .carousel-btn {
     position: absolute;
     top: 50%;
@@ -161,10 +142,6 @@ import carouselData from '../data/carousel.json';
     .carousel-btn {
       width: 36px;
       height: 36px;
-    }
-
-    .carousel-caption {
-      font-size: 1rem;
     }
   }
 </style>
