@@ -1,0 +1,12 @@
+{
+  "talleres": [
+    {
+      "id": "parroquia-crucifixion",
+      "ubicacion": "Parroquia Crucifixión del Señor",
+      "titulo": "Taller de Salud Mental para jóvenes y adultos en proceso de rehabilitación por consumos problemáticos",
+      "resumen": "Durante este encuentro trabajamos junto a jóvenes y adultos que se encuentran transitando procesos de rehabilitación y recuperación. A través de dinámicas participativas, espacios de diálogo y actividades reflexivas, abordamos temáticas vinculadas al bienestar emocional, los vínculos y la construcción de proyectos de vida.",
+      "contenido": "Durante este encuentro trabajamos junto a jóvenes y adultos que se encuentran transitando procesos de rehabilitación y recuperación. A través de dinámicas participativas, espacios de diálogo y actividades reflexivas, abordamos temáticas vinculadas al bienestar emocional, los vínculos, la construcción de proyectos de vida y el fortalecimiento de recursos personales para afrontar desafíos cotidianos.\n\nLa propuesta buscó generar un espacio de escucha, intercambio y acompañamiento, promoviendo la participación activa de los asistentes y el reconocimiento de las redes de apoyo como elementos fundamentales en los procesos de recuperación. La experiencia permitió compartir herramientas concretas para el cuidado de la salud mental desde una perspectiva comunitaria y humana.",
+      "imagen": "/images/talleres/taller-overling.jpeg"
+    }
+  ]
+}

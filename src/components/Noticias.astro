@@ -1,34 +1,26 @@
 ---
-import { getCollection } from 'astro:content';
+import talleresData from '../data/talleres.json';
 
-const noticias = (await getCollection('noticias')).sort(
-  (a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf()
-);
+const talleres = talleresData.talleres;
 ---
 
-<section id="noticias" class="noticias section">
-  <div class="noticias-wrapper">
-    <h2 class="section-title">Noticias</h2>
+<section id="noticias" class="talleres section">
+  <div class="talleres-wrapper">
+    <h2 class="section-title">Últimos Talleres</h2>
     
-    <div class="noticias-grid">
-      {noticias.map((noticia) => (
-        <article class="noticia-card">
-          <div class="noticia-card-img">
-            <img src={noticia.data.imagen} alt={noticia.data.titulo} loading="lazy" />
+    <div class="talleres-grid">
+      {talleres.map((taller) => (
+        <article class="taller-card">
+          <div class="taller-card-img">
+            <img src={taller.imagen} alt={taller.titulo} loading="lazy" />
           </div>
-          <div class="noticia-card-content">
-            <time class="noticia-fecha" datetime={noticia.data.fecha.toISOString()}>
-              {noticia.data.fecha.toLocaleDateString('es-AR', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-            <h3 class="noticia-titulo">{noticia.data.titulo}</h3>
-            <p class="noticia-desc">{noticia.data.descripcion}</p>
-            {noticia.data.autor && (
-              <span class="noticia-autor">Por {noticia.data.autor}</span>
-            )}
+          <div class="taller-card-content">
+            <span class="taller-ubicacion"><svg class="icon-ubicacion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E53935" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg> {taller.ubicacion}</span>
+            <h3 class="taller-titulo">{taller.titulo}</h3>
+            <p class="taller-resumen">{taller.resumen}</p>
+            <a href={`/talleres/${taller.id}`} class="taller-leer-mas">
+              Leer más →
+            </a>
           </div>
         </article>
       ))}
@@ -37,22 +29,22 @@ const noticias = (await getCollection('noticias')).sort(
 </section>
 
 <style>
-  .noticias {
+  .talleres {
     background: var(--color-bg-alt);
   }
 
-  .noticias-wrapper {
+  .talleres-wrapper {
     width: 100%;
     padding: 0 2rem;
   }
 
-  .noticias-grid {
+  .talleres-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
 
-  .noticia-card {
+  .taller-card {
     background: var(--color-white);
     border-radius: 12px;
     overflow: hidden;
@@ -60,60 +52,77 @@ const noticias = (await getCollection('noticias')).sort(
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .noticia-card:hover {
+  .taller-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 
-  .noticia-card-img {
+  .taller-card-img {
     width: 100%;
     height: 200px;
     overflow: hidden;
   }
 
-  .noticia-card-img img {
+  .taller-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
 
-  .noticia-card:hover .noticia-card-img img {
+  .taller-card:hover .taller-card-img img {
     transform: scale(1.05);
   }
 
-  .noticia-card-content {
+  .taller-card-content {
     padding: 1.5rem;
   }
 
-  .noticia-fecha {
-    font-size: 0.85rem;
-    color: var(--color-primary-light);
-    font-weight: 500;
+  .taller-ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
-  .noticia-titulo {
+  .taller-ubicacion :global(.icon-ubicacion) {
+    flex-shrink: 0;
+  }
+
+  .taller-titulo {
     font-size: 1.2rem;
-    margin: 0.5rem 0 0.75rem;
+    margin: 0.25rem 0 0.75rem;
     color: var(--color-primary-dark);
     line-height: 1.3;
+    text-transform: none;
   }
 
-  .noticia-desc {
+  .taller-resumen {
     color: var(--color-text-light);
     font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
 
-  .noticia-autor {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    font-style: italic;
+  .taller-leer-mas {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+
+  .taller-leer-mas:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {
-    .noticias-grid {
+    .talleres-grid {
       grid-template-columns: 1fr;
     }
   }

@@ -3,20 +3,20 @@
   "integrantes": [
     {
       "nombre": "Camila Cisneros",
-      "rol": "Presidenta",
-      "descripcion": "Profesora de Lengua y Literatura con una profunda vocación por la enseñanza y el acompañamiento social. Camila impulsó la creación de Redes que Cuidan convencida de que la palabra y la escucha son herramientas fundamentales para la contención emocional y el fortalecimiento comunitario.",
+      "rol": "Docente y tallerista. Coordinadora y gestora del proyecto.",
+      "descripcion": "Responsable de la planificación general, el diseño de las propuestas educativas y la elaboración de las secuencias didácticas. Su trabajo se centra en la construcción de espacios participativos que promuevan la reflexión, la creatividad y el aprendizaje significativo.",
       "imagen": "/images/equipo/camila.png"
     },
     {
       "nombre": "Carolina Grau",
-      "rol": "Coordinadora de Actividades",
-      "descripcion": "Licenciada en Gestión Social, Carolina se encarga de planificar y coordinar cada una de las actividades que la fundación lleva adelante. Su experiencia en el trabajo con comunidades le permite diseñar propuestas inclusivas y accesibles para todos los participantes.",
+      "rol": "Licenciada en Trabajo Social.",
+      "descripcion": "Aporta una mirada comunitaria e integral sobre las problemáticas sociales que atraviesan a las personas y los grupos. Participa en el diseño y desarrollo de los talleres, promoviendo el fortalecimiento de redes de apoyo, la inclusión social y el acceso a herramientas que favorezcan el bienestar individual y colectivo.",
       "imagen": "/images/equipo/carolina.png"
     },
     {
       "nombre": "Micaela Cinti",
-      "rol": "Planeamiento y Desarrollo",
-      "descripcion": "Licenciada en Psicología, Micaela aporta una mirada integral sobre la salud mental y el bienestar emocional en cada proyecto de la fundación. Se encarga del planeamiento estratégico y del diseño de talleres orientados al cuidado y la prevención en salud mental.",
+      "rol": "Licenciada en Psicología.",
+      "descripcion": "Contribuye desde una perspectiva de promoción y prevención en salud mental, aportando conocimientos sobre procesos subjetivos, vínculos y bienestar emocional. Participa en la elaboración de contenidos y en la coordinación de espacios de reflexión, escucha y acompañamiento orientados al desarrollo de recursos personales y comunitarios.",
       "imagen": "/images/equipo/micaela.png"
     }
   ]
