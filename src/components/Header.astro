@@ -9,14 +9,13 @@ import siteData from '../data/site.json';
     </button>
 
     <a href="/" class="logo">
-      <span class="logo-text">{siteData.nombre}</span>
+      <span class="logo-text">Redes <span class="logo-que">que</span> cuidan</span>
     </a>
 
     <nav class="nav" id="main-nav">
       <ul class="nav-list">
         <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
-        <li><a href="#noticias" class="nav-link">Noticias</a></li>
+        <li><a href="#talleres" class="nav-link">Talleres</a></li>
         <li><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
     </nav>
@@ -48,14 +47,21 @@ import siteData from '../data/site.json';
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
   }
 
   .logo-text {
-    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-que {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: 400;
   }
 
   .nav-list {
