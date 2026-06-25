@@ -6,7 +6,7 @@ import siteData from '../data/site.json';
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <h3>{siteData.nombre}</h3>
+        <h3 class="footer-logo"><span class="fl-blanco">R</span><span class="fl-violeta">e</span><span class="fl-blanco">des</span> <span class="fl-que">que</span> <span class="fl-blanco">cuidan</span></h3>
         <p class="footer-desc">{siteData.descripcion}</p>
       </div>
 
@@ -76,9 +76,25 @@ import siteData from '../data/site.json';
   }
 
   .footer-section h3 {
-    color: var(--color-white);
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+  }
+
+  .fl-blanco {
+    color: #ffffff;
+  }
+
+  .fl-violeta {
+    color: #ce93d8;
+  }
+
+  .fl-que {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #ffe082;
   }
 
   .footer-section h4 {

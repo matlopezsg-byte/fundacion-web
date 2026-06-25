@@ -9,14 +9,14 @@ import siteData from '../data/site.json';
     </button>
 
     <a href="/" class="logo">
-      <span class="logo-text">Redes <span class="logo-que">que</span> cuidan</span>
+      <span class="logo-text"><span class="logo-blanco">R</span><span class="logo-violeta">e</span><span class="logo-blanco">des</span> <span class="logo-que">que</span> <span class="logo-blanco">cuidan</span></span>
     </a>
 
     <nav class="nav" id="main-nav">
       <ul class="nav-list">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#talleres" class="nav-link">Talleres</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="/#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="/#talleres" class="nav-link">Talleres</a></li>
+        <li><a href="/#contacto" class="nav-link">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -54,14 +54,22 @@ import siteData from '../data/site.json';
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #ffffff;
     letter-spacing: 0.5px;
+  }
+
+  .logo-blanco {
+    color: #ffffff;
+  }
+
+  .logo-violeta {
+    color: #ce93d8;
   }
 
   .logo-que {
     font-family: 'Georgia', serif;
     font-style: italic;
     font-weight: 400;
+    color: #ffe082;
   }
 
   .nav-list {
